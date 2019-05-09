@@ -8,12 +8,21 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        >
+        <activity android:name=".IntroActivity"
+            android:theme="@style/introTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <provider
             android:name=".DatabaseProvider"
             android:authorities="com.example.fourcomppractice.provider"
             android:enabled="true"
-            android:exported="true"></provider>
+            android:exported="true" />
 
         <service
             android:name=".CalculatorService"
@@ -24,17 +33,14 @@
             android:name=".ActivityB"
             android:label="ActivityB"
             android:launchMode="singleTask"
+            android:theme="@style/AppTheme"
             />
         <activity
-            android:name=".MainActivity"
+            android:name=".ActivityA"
             android:label="ActivityA"
             android:launchMode="singleTask"
+            android:theme="@style/AppTheme"
             >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 

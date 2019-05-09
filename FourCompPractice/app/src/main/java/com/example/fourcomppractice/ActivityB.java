@@ -7,10 +7,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.Cursor;
 import android.net.Uri;
-import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -83,7 +81,7 @@ public class ActivityB extends AppCompatActivity implements View.OnClickListener
             @Override
             public void onReceive(Context context, Intent intent) {
                 Intent i = new Intent();
-                i.setClass(context,MainActivity.class);
+                i.setClass(context, ActivityA.class);
                 i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(i);
             }
@@ -123,7 +121,7 @@ public class ActivityB extends AppCompatActivity implements View.OnClickListener
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.DirectStartActivity:
-                Intent intent = new Intent(getBaseContext(), ActivityB.class);
+                Intent intent = new Intent(getBaseContext(), ActivityA.class);
                 startActivity(intent);
                 break;
             case R.id.BroadcastStartActivity:
