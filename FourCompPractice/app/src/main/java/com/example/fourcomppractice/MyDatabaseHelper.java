@@ -3,13 +3,12 @@ package com.example.fourcomppractice;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.widget.Toast;
 
 public class MyDatabaseHelper extends SQLiteOpenHelper {
 
     public static final String CREATE_VALUE = "create table Value ("
             + "id integer primary key autoincrement, "
-            + "value integer)";
+            + "value double)";
 
     private Context mContext;
 

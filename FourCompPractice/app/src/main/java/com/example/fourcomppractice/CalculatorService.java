@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.Binder;
 import android.os.IBinder;
+import android.util.Log;
 import android.widget.Toast;
 
 public class CalculatorService extends Service {
@@ -23,6 +24,24 @@ public class CalculatorService extends Service {
     {
         public int calculate(int s) {
             return s*10;
+        }
+
+        public double operate(String a, String b, String op){
+            switch (op){
+                case "+": return Double.valueOf(a) + Double.valueOf(b);
+                case "-": return Double.valueOf(a) - Double.valueOf(b);
+                case "x": return Double.valueOf(a) * Double.valueOf(b);
+                case "÷": try{
+                    return Double.valueOf(a) / Double.valueOf(b);
+                }catch (Exception e){
+                    Log.d("Calc", e.getMessage());
+                }
+                default: return -1;
+            }
+        }
+        public void test()
+        {
+            Log.d("dddd", "test: adsadsadasdsadasdsa");
         }
     }
     @Override

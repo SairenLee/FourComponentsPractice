@@ -1,48 +1,44 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:label="ActivityB"
-    >
-    <Button
-        android:id="@+id/DirectStartActivity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Direct Start Activity"
-        />
-    <Button
-        android:id="@+id/BroadcastStartActivity"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Broadcast Start Activity"
-        />
-    <EditText
-        android:id="@+id/input_number"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        />
+    tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/StartService"
+    <RelativeLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+            <ListView
+                android:id="@+id/view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ListView>
+        </LinearLayout>
+    </RelativeLayout>
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="StartService" />
-
-    <Button
-        android:id="@+id/Calculate"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Calculate"
+        android:layout_gravity="left|bottom"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_keyboard_backspace_black_24dp"
+        app:fabSize="normal"
+        app:elevation="6dp"
+        android:id="@+id/back"
+        app:backgroundTint="@color/startblue"
         />
-    <Button
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_clear_black_24dp"
+        app:fabSize="normal"
+        app:elevation="6dp"
         android:id="@+id/Delete_data"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Delete ALL"
         />
-    <ListView
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"></ListView>
-
-</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>
